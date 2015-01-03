@@ -11,7 +11,7 @@ var T = new Twit({
 var currentTweets = [];
 
 var phrases = ["You want some? I'll give it to ya!", "You've got no ground.", "You want some or what?"];
-var endingPhrase = "'Alot' is not a word. Try 'a lot'.";
+var endingPhrase = "I think you mean 'a lot'.";
 var stream = T.stream('statuses/filter', { track: 'alot' });
 
 stream.on('tweet', function (tweet) {

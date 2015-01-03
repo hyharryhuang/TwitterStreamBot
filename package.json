@@ -1,0 +1,7 @@
+{
+	"name" : "TwitterStreamBot",
+	"private" : true,
+	"dependencies": {
+		"twit": "*"
+	}
+}

@@ -20,7 +20,7 @@ stream.on('tweet', function (tweet) {
 		&& !("retweeted_status" in tweet))
 	{
 		currentTweetObj = 	{	"user": tweet.user.screen_name, 
-								"replyId" : tweet.id_str §
+								"replyId" : tweet.id_str
 							};
 
 		currentTweets.push(currentTweetObj);

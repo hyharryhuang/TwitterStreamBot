@@ -12,10 +12,11 @@ var currentTweets = [];
 
 var phrases = ["You want some? I'll give it to ya!", "You've got no ground.", "You want some or what?"];
 var endingPhrase = "I think you mean 'a lot'.";
-var stream = T.stream('statuses/filter', { track: 'alot' });
+var stream = T.stream('statuses/filter', { track: config.trackingWord });
 
 stream.on('tweet', function (tweet) {
-	if("user" in tweet && "screen_name" in tweet.user && "id_str" in tweet && tweet.user.screen_name != config.username)
+	if("user" in tweet && "screen_name" in tweet.user && "id_str" in tweet && tweet.user.screen_name != config.username && "text" in tweet && tweet["text"].indexOf(config.trackingWord) > -1 
+		&& !("retweeted_status" in tweet))
 	{
 		currentTweetObj = 	{	"user": tweet.user.screen_name, 
 								"replyId" : tweet.id_str 

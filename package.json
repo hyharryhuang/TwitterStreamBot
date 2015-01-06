@@ -2,6 +2,7 @@
 	"name" : "TwitterStreamBot",
 	"private" : true,
 	"dependencies": {
-		"twit": "*"
+		"twit": "*",
+		"gramophone" : "*"
 	}
 }

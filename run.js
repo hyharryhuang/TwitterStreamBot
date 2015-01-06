@@ -28,12 +28,6 @@ stream.on('tweet', function (tweet) {
 	};
 })
 
-var userStream = T.stream('user');
-
-userStream.on('tweet', function(tweet) {
-	console.log(tweet);
-});
-
 setInterval( function() {
 	if(Object.keys(currentTweets).length)
 	{
@@ -64,7 +58,6 @@ function getAndPostSummary() {
 
 			var frequentWords = Gramophone.extract(currentReplies, {stopWords:config.stopWords});
 			var summary = constructSummaryTweetWithFrequentWords(frequentWords);
-			console.log(summary);
 
 			T.post('statuses/update', { status: summary}, function(err, data, response) {});
 		}

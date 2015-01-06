@@ -34,7 +34,7 @@ setInterval( function() {
 		var randTweet = currentTweets[Math.floor(Math.random() * currentTweets.length)];
 		var randPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 
-		T.post('statuses/update', { status: '.@' + randTweet.user + ' ' + randPhrase + ' ' + endingPhrase, in_reply_to_status_id: randTweet.replyId }, function(err, data, response) {
+		T.post('statuses/update', { status: '@' + randTweet.user + ' ' + randPhrase + ' ' + endingPhrase, in_reply_to_status_id: randTweet.replyId }, function(err, data, response) {
 		})
 
 		//reset cache

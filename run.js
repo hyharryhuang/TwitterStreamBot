@@ -11,8 +11,8 @@ var T = new Twit({
 
 var currentTweets = [];
 
-var phrases = ["You want some? I'll give it to ya!", "You've got no ground.", "You want some or what?", "You wanna deal with me?", "You've got not fans!"];
-var endingPhrase = "I think you mean 'a lot'.";
+var phrases = config.phrases;
+var endingPhrase = config.endingPhrase;
 var stream = T.stream('statuses/filter', { track: config.trackingWord });
 
 stream.on('tweet', function (tweet) {
